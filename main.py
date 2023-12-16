@@ -9,13 +9,13 @@ from flask_wtf.csrf import CSRFProtect
 
 app = Flask(__name__)
 csrf = CSRFProtect(app)
-app.config["SECRET_KEY"] = "your_secret_key"
+app.config["SECRET_KEY"] = "urlsecretpolat"
 csrf.init_app(app)
 
-app.config["MYSQL_HOST"] = "localhost"
-app.config["MYSQL_USER"] = "root"
-app.config["MYSQL_PASSWORD"] = ""
-app.config["MYSQL_DB"] = "urlshortener"
+app.config["MYSQL_HOST"] = "" # Bu alanı siz dolduracaksınız.
+app.config["MYSQL_USER"] = "" # Bu alanı siz dolduracaksınız.
+app.config["MYSQL_PASSWORD"] = "" # Bu alanı siz dolduracaksınız.
+app.config["MYSQL_DB"] = "urlshortener" # Bu alanı siz dolduracaksınız.
 app.config["MYSQL_CURSORCLASS"] = "DictCursor"
 
 # Database connection setup
@@ -66,7 +66,7 @@ def redirect_url(short_url):
     url_entry = cursor.fetchone()
 
     if url_entry:
-        return redirect(url_entry[1])  # 'long_url' sütunu 1. indekste
+        return redirect(url_entry[1])
     else:
         return "URL not found", 404
 
