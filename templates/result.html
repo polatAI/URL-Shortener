@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>URL Shortener - Result</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: url('https://cdn.wallpapersafari.com/69/68/UxE3To.jpg') no-repeat center center fixed;
+            background-size: cover;
+            font-family: 'Arial', sans-serif;
+            color: #fff;
+        }
+
+        h1 {
+            text-align: center;
+            padding-top: 50px;
+        }
+
+        .result {
+            text-align: center;
+            margin-top: 50px;
+            color: #fff; /* Sonuç metni rengini beyaz olarak ayarlayabilirsiniz */
+        }
+    </style>
+</head>
+<body>
+    <h1>URL Shortener - Result</h1>
+
+    <div class="result">
+        <p>Shortened URL: <a href="{{ short_url }}">{{ short_url }}</a></p>
+    </div>
+</body>
+</html>

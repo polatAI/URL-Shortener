@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>URL Shortener</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: url('https://cdn.wallpapersafari.com/69/68/UxE3To.jpg') no-repeat center center fixed;
+            background-size: cover;
+            font-family: 'Arial', sans-serif;
+            color: #fff; /* metin rengini beyaz olarak ayarlayabilirsiniz */
+        }
+
+        h1 {
+            text-align: center;
+            padding-top: 50px; /* h1 başlık ile arkaplan resmi arasındaki mesafeyi ayarlar */
+        }
+
+        form {
+            text-align: center;
+            margin-top: 50px; /* form ile h1 arasındaki mesafeyi ayarlar */
+        }
+
+        input {
+            padding: 10px;
+            font-size: 16px;
+            margin-right: 10px;
+            width: 300px;
+            border: none;
+            border-radius: 5px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            background-color: #4CAF50; /* düğme rengini ayarlayabilirsiniz */
+            color: #fff;
+        }
+
+        .github-link {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 14px;
+        }
+
+        .github-link a {
+            color: #fff;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>URL Shortener</h1>
+
+    <form method="post" action="{{ url_for('index') }}">
+        {{ form.csrf_token }}
+        {{ form.hidden_tag() }}
+        <input type="text" name="long_url" placeholder="Enter long url">
+        <button type="submit">SHORT</button>
+    </form>
+
+    <div class="github-link">
+        <p>Diğer projelerim için GitHub adresime göz atabilirsin: <a  href="https://github.com/SOFTWAREPOLAT?tab=repositories" target="_blank">GitHub Link</a></p>
+    </div>
+</body>
+</html>
